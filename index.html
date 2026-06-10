@@ -538,7 +538,7 @@
         <div class="stat-label">Sophomore GPA</div>
       </div>
       <div class="stat-item">
-        <div class="stat-val">+15%</div>
+        <div class="stat-val" id="hero-return">—</div>
         <div class="stat-label">Avg pitch return</div>
       </div>
       <div class="stat-item">
@@ -555,17 +555,27 @@
     <h2 class="section-title">Investment pitches</h2>
 
     <div class="tracker-bar">
-      <span class="tracker-label">Live tracking — pitch submitted June 9, 2026</span>
+      <div>
+        <span class="tracker-label">Live tracking — pitch submitted June 9, 2026</span>
+        <div id="tracker-status" style="font-size:11px;color:var(--text-dim);margin-top:3px;">Loading prices...</div>
+      </div>
       <div class="tracker-items">
         <div class="tracker-item">
           <span class="tracker-ticker">DKNG</span>
-          <span class="tracker-price">$27.59</span>
-          <span class="tracker-chg chg-up">+5.7% today</span>
+          <span class="tracker-price" id="dkng-price">—</span>
+          <span class="tracker-chg" id="dkng-day">—</span>
+          <span class="tracker-chg" id="dkng-since" style="font-size:11px;color:var(--text-dim);">since pitch</span>
         </div>
         <div class="tracker-item">
           <span class="tracker-ticker">FLUT</span>
-          <span class="tracker-price">$99.58</span>
-          <span class="tracker-chg chg-up">+15% since pitch</span>
+          <span class="tracker-price" id="flut-price">—</span>
+          <span class="tracker-chg" id="flut-day">—</span>
+          <span class="tracker-chg" id="flut-since" style="font-size:11px;color:var(--text-dim);">since pitch</span>
+        </div>
+        <div class="tracker-item">
+          <span class="tracker-ticker" style="font-size:10px;">AVG RETURN</span>
+          <span class="tracker-price" id="avg-return" style="font-size:1.1rem;">—</span>
+          <span class="tracker-chg" id="avg-return-label" style="font-size:11px;color:var(--text-dim);">since pitch</span>
         </div>
       </div>
     </div>
@@ -580,8 +590,8 @@
           <h3 class="pitch-title">Sports Betting Surge of June 2026</h3>
         </div>
         <div class="return-badge">
-          <span class="return-val positive">+15%</span>
-          <span class="return-label">since pitch</span>
+          <span class="return-val" id="pitch-return">—</span>
+          <span class="return-label">avg return since pitch</span>
         </div>
       </div>
 
@@ -630,29 +640,38 @@
     <h2 class="section-title">Experience</h2>
 
     <div class="exp-item">
-      <div class="exp-period">Jun 2026 – Present</div>
-      <div>
-        <div class="exp-role">Accounts Payable & Financial Operations Intern</div>
-        <div class="exp-company">ADJ Lighting</div>
-        <div class="exp-desc">Managing invoice processing and bank reconciliations across the financial operations function. Responsible for accuracy across high-volume AP workflows and cross-functional reconciliation.</div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-period">Fall 2026 – Present</div>
+      <div class="exp-period">May 2026 – Present</div>
       <div>
         <div class="exp-role">Junior Analyst</div>
         <div class="exp-company">Ole Miss Investment Group</div>
-        <div class="exp-desc">Conducting equity research and presenting long/short investment pitches to the full investment committee. Most recent pitch: long FLUT/DKNG on a June 2026 sports betting surge thesis — up ~15% within two days of submission.</div>
+        <div class="exp-desc">Monitor market trends, earnings releases, and company-specific developments for the Industrials sector portfolio holdings. Participate in equity research discussions involving valuation, financial statement analysis, and investment strategy for a student-managed investment portfolio. Most recent pitch: long FLUT/DKNG on a June 2026 sports betting surge thesis — up ~15% within two days of submission.</div>
       </div>
     </div>
 
     <div class="exp-item">
-      <div class="exp-period">Fall 2026 – Upcoming</div>
+      <div class="exp-period">May 2026 – Present</div>
       <div>
-        <div class="exp-role">Finance Intern (President-Sponsored Program)</div>
-        <div class="exp-company">BankFirst</div>
-        <div class="exp-desc">Custom internship program created by the company president. Gaining exposure to banking operations, financial analysis, and institutional finance during the academic year.</div>
+        <div class="exp-role">Accounts Payable & Finance Operations Intern</div>
+        <div class="exp-company">ADJ Lighting · Los Angeles, CA</div>
+        <div class="exp-desc">Process vendor and factory invoices while verifying supporting financial documentation within the company's ERP system. Assist with payment processing, invoice matching, and bank reconciliations within the accounts payable function.</div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-period">Aug 2025 – Present</div>
+      <div>
+        <div class="exp-role">Recruitment Team</div>
+        <div class="exp-company">Kappa Sigma Fraternity · Ole Miss</div>
+        <div class="exp-desc">Collaborate with fraternity leadership to plan recruitment events and support member selection. Engage with potential new members, effectively communicating the fraternity's values and fostering positive relationships.</div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-period">2026</div>
+      <div>
+        <div class="exp-role">Investment Banking Job Simulation</div>
+        <div class="exp-company">JPMorgan Chase · Forage</div>
+        <div class="exp-desc">Identified an ideal M&A target for a client through analysis of strategic and financial factors. Constructed a DCF model to calculate the valuation of the M&A target and adjusted the model to account for a competitor bid and supply chain interruption. Created a 2-pager for the client containing a company profile and a summary of the auction process.</div>
       </div>
     </div>
 
@@ -666,7 +685,7 @@
     <div class="about-grid">
       <div class="about-card">
         <div class="about-card-label">Education</div>
-        <div class="about-card-val">University of Mississippi<br>B.S. Finance, Minor in Accounting<br>Rising Junior · GPA: 3.4 cumulative, 3.8 sophomore year</div>
+        <div class="about-card-val">University of Mississippi<br>BBA Finance, Minor in Accounting · May 2028<br>GPA: 3.4 cumulative, 3.8 sophomore year<br>Chancellor's Honor Roll: Fall 2025, Spring 2026</div>
       </div>
       <div class="about-card">
         <div class="about-card-label">Focus areas</div>
@@ -680,6 +699,14 @@
         <div class="about-card-label">Career target</div>
         <div class="about-card-val">Middle market investment banking → private equity → M7 MBA → megafund PE</div>
       </div>
+      <div class="about-card">
+        <div class="about-card-label">Technical skills</div>
+        <div class="about-card-val">Microsoft Word, Excel, PowerPoint<br>Financial modeling · DCF valuation<br>M&A analysis · Equity research</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-label">Interests</div>
+        <div class="about-card-val">NFL · Snowboarding · Golf</div>
+      </div>
     </div>
   </div>
 </section>
@@ -690,9 +717,9 @@
     <h2 class="section-title">Contact</h2>
     <p style="color: var(--text-muted); max-width: 480px;">Open to networking with finance professionals, investment bankers, and recruiters. Always happy to walk through my research in detail.</p>
     <div class="contact-row">
-      <a class="contact-btn btn-primary" href="mailto:your@email.com">Email me</a>
-      <a class="contact-btn btn-secondary" href="https://linkedin.com" target="_blank">LinkedIn</a>
-      <a class="contact-btn btn-secondary" href="#">Download resume</a>
+      <a class="contact-btn btn-primary" href="mailto:jack@jackharrisonneal.com">Email me</a>
+      <a class="contact-btn btn-secondary" href="https://linkedin.com/in/jackhneal-finance" target="_blank">LinkedIn</a>
+      <a class="contact-btn btn-secondary" href="resume_june.pdf" target="_blank">Download resume</a>
     </div>
   </div>
 </section>
@@ -702,6 +729,83 @@
     Jack Neal · Finance Portfolio · Updated June 2026
   </div>
 </footer>
+
+<script>
+  // Pitch entry prices (June 9, 2026)
+  const DKNG_ENTRY = 26.66;
+  const FLUT_ENTRY = 110.87;
+
+  function fmt(n) { return '$' + n.toFixed(2); }
+  function fmtPct(n) { return (n >= 0 ? '+' : '') + n.toFixed(1) + '%'; }
+  function colorClass(n) { return n >= 0 ? 'chg-up' : 'chg-dn'; }
+
+  function applyStock(priceId, dayId, sinceId, price, dayChg, entryPrice) {
+    const sincePct = ((price - entryPrice) / entryPrice) * 100;
+    document.getElementById(priceId).textContent = fmt(price);
+    const dayEl = document.getElementById(dayId);
+    dayEl.textContent = fmtPct(dayChg) + ' today';
+    dayEl.className = 'tracker-chg ' + colorClass(dayChg);
+    const sinceEl = document.getElementById(sinceId);
+    sinceEl.textContent = fmtPct(sincePct) + ' since pitch';
+    sinceEl.className = 'tracker-chg ' + colorClass(sincePct);
+    return sincePct;
+  }
+
+  function applyAvg(dkngSince, flutSince) {
+    const avg = (dkngSince + flutSince) / 2;
+    const avgEl = document.getElementById('avg-return');
+    avgEl.textContent = fmtPct(avg);
+    avgEl.className = 'tracker-price ' + colorClass(avg);
+
+    const pitchEl = document.getElementById('pitch-return');
+    pitchEl.textContent = fmtPct(avg);
+    pitchEl.className = 'return-val ' + (avg >= 0 ? 'positive' : 'negative');
+
+    const heroEl = document.getElementById('hero-return');
+    heroEl.textContent = fmtPct(avg);
+  }
+
+  async function fetchQuote(symbol) {
+    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=1d`;
+    const res = await fetch(url);
+    const data = await res.json();
+    const meta = data.chart.result[0].meta;
+    const price = meta.regularMarketPrice;
+    const prev = meta.chartPreviousClose;
+    const dayChg = ((price - prev) / prev) * 100;
+    return { price, dayChg };
+  }
+
+  async function loadPrices() {
+    try {
+      const [dkng, flut] = await Promise.all([
+        fetchQuote('DKNG'),
+        fetchQuote('FLUT')
+      ]);
+      const dkngSince = applyStock('dkng-price', 'dkng-day', 'dkng-since', dkng.price, dkng.dayChg, DKNG_ENTRY);
+      const flutSince = applyStock('flut-price', 'flut-day', 'flut-since', flut.price, flut.dayChg, FLUT_ENTRY);
+      applyAvg(dkngSince, flutSince);
+      document.getElementById('tracker-status').textContent = 'Updated ' + new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+    } catch(e) {
+      document.getElementById('tracker-status').textContent = 'Market data unavailable — prices may be delayed';
+      // Fallback to last known values
+      document.getElementById('dkng-price').textContent = '$27.59';
+      document.getElementById('flut-price').textContent = '$99.58';
+      document.getElementById('dkng-day').textContent = '+5.7% today';
+      document.getElementById('dkng-day').className = 'tracker-chg chg-up';
+      document.getElementById('flut-day').textContent = '+15.0% since pitch';
+      document.getElementById('flut-day').className = 'tracker-chg chg-up';
+      document.getElementById('avg-return').textContent = '+15.0%';
+      document.getElementById('avg-return').className = 'tracker-price chg-up';
+      document.getElementById('pitch-return').textContent = '+15.0%';
+      document.getElementById('pitch-return').className = 'return-val positive';
+      document.getElementById('hero-return').textContent = '+15%';
+    }
+  }
+
+  loadPrices();
+  setInterval(loadPrices, 60000);
+</script>
 
 </body>
 </html>
