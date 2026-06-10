@@ -766,12 +766,14 @@
   }
 
   async function fetchQuote(symbol) {
-    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=1d`;
-    const res = await fetch(url);
-    const data = await res.json();
-    const meta = data.chart.result[0].meta;
-    const price = meta.regularMarketPrice;
-    const prev = meta.chartPreviousClose;
+    const token = 'd1iumcpr01qhkj9r0ci0d1iumcpr01qhkj9r0cig';
+    const [quoteRes, prevRes] = await Promise.all([
+      fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${token}`),
+      fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${token}`)
+    ]);
+    const data = await quoteRes.json();
+    const price = data.c;
+    const prev = data.pc;
     const dayChg = ((price - prev) / prev) * 100;
     return { price, dayChg };
   }
@@ -789,17 +791,21 @@
     } catch(e) {
       document.getElementById('tracker-status').textContent = 'Market data unavailable — prices may be delayed';
       // Fallback to last known values
-      document.getElementById('dkng-price').textContent = '$27.59';
-      document.getElementById('flut-price').textContent = '$99.58';
-      document.getElementById('dkng-day').textContent = '+5.7% today';
+      document.getElementById('dkng-price').textContent = '$29.12';
+      document.getElementById('flut-price').textContent = '$114.71';
+      document.getElementById('dkng-day').textContent = '+5.5% today';
       document.getElementById('dkng-day').className = 'tracker-chg chg-up';
-      document.getElementById('flut-day').textContent = '+15.0% since pitch';
+      document.getElementById('dkng-since').textContent = '+9.2% since pitch';
+      document.getElementById('dkng-since').className = 'tracker-chg chg-up';
+      document.getElementById('flut-day').textContent = '+3.1% today';
       document.getElementById('flut-day').className = 'tracker-chg chg-up';
-      document.getElementById('avg-return').textContent = '+15.0%';
+      document.getElementById('flut-since').textContent = '+3.5% since pitch';
+      document.getElementById('flut-since').className = 'tracker-chg chg-up';
+      document.getElementById('avg-return').textContent = '+6.4%';
       document.getElementById('avg-return').className = 'tracker-price chg-up';
-      document.getElementById('pitch-return').textContent = '+15.0%';
+      document.getElementById('pitch-return').textContent = '+6.4%';
       document.getElementById('pitch-return').className = 'return-val positive';
-      document.getElementById('hero-return').textContent = '+15%';
+      document.getElementById('hero-return').textContent = '+6.4%';
     }
   }
 
