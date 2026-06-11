@@ -644,7 +644,7 @@
       <div>
         <div class="exp-role">Junior Analyst</div>
         <div class="exp-company">Ole Miss Investment Group</div>
-        <div class="exp-desc">Monitor market trends, earnings releases, and company-specific developments for the Industrials sector portfolio holdings. Participate in equity research discussions involving valuation, financial statement analysis, and investment strategy for a student-managed investment portfolio. Most recent pitch: long FLUT/DKNG on a June 2026 sports betting surge thesis.</div>
+        <div class="exp-desc">Monitor market trends, earnings releases, and company-specific developments for the Industrials sector portfolio holdings. Participate in equity research discussions involving valuation, financial statement analysis, and investment strategy for a student-managed investment portfolio. Most recent pitch: long FLUT/DKNG on a June 2026 sports betting surge thesis — up ~15% within two days of submission.</div>
       </div>
     </div>
 
@@ -701,7 +701,7 @@
       </div>
       <div class="about-card">
         <div class="about-card-label">Interests</div>
-        <div class="about-card-val">NFL · Snowboarding · Golf · Country Music · Suits · Investments · Running</div>
+        <div class="about-card-val">NFL · Snowboarding · Golf</div>
       </div>
     </div>
   </div>
@@ -762,14 +762,12 @@
   }
 
   async function fetchQuote(symbol) {
-    const token = 'd1iumcpr01qhkj9r0ci0d1iumcpr01qhkj9r0cig';
-    const [quoteRes, prevRes] = await Promise.all([
-      fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${token}`),
-      fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${token}`)
-    ]);
-    const data = await quoteRes.json();
-    const price = data.c;
-    const prev = data.pc;
+    const key = '9OA27HeHkGk7b5J3W6FOnSdo0E0qo1mE';
+    const res = await fetch(`https://financialmodelingprep.com/api/v3/quote/${symbol}?apikey=${key}`);
+    const data = await res.json();
+    const q = data[0];
+    const price = q.price;
+    const prev = q.previousClose;
     const dayChg = ((price - prev) / prev) * 100;
     return { price, dayChg };
   }
