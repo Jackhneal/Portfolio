@@ -762,15 +762,26 @@
   }
 
   async function fetchQuote(symbol) {
-    const key = '9OA27HeHkGk7b5J3W6FOnSdo0E0qo1mE';
-    const res = await fetch(`https://financialmodelingprep.com/api/v3/quote/${symbol}?apikey=${key}`);
-    const data = await res.json();
-    const q = data[0];
-    const price = q.price;
-    const prev = q.previousClose;
-    const dayChg = ((price - prev) / prev) * 100;
-    return { price, dayChg };
+  const token = 'd8lds0pr01qtamgu96m0d8lds0pr01qtamgu96mg';
+
+  const response = await fetch(
+    `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${token}`
+  );
+
+  const data = await response.json();
+
+  const price = data.c;
+  const prev = data.pc;
+
+  if (!price || !prev) {
+    throw new Error('Invalid quote data');
   }
+
+  return {
+    price,
+    dayChg: ((price - prev) / prev) * 100
+  };
+}
 
   async function loadPrices() {
     try {
